@@ -1,4 +1,3 @@
-import math
 print("***Calculater***")
 
 try:
@@ -18,16 +17,16 @@ except:
     
 match Operater:
     case "+":
-        print(math.floor(num1 + num2))
+        print(round(num1 + num2))
     case "-":
-        print(math.floor(num1 - num2))
+        print(round(num1 - num2))
     case "*":
-        print(math.floor(num1 * num2))
+        print(round(num1 * num2))
     case "/":
-        print(math.floor(num1 / num2))
+        print(round(num1 / num2))
     case "%":
-        print(math.floor(num1 % num2))
+        print(round(num1 % num2))
     case "^":
-        print(math.floor(pow(num1, num2)))
+        print(round(pow(num1, num2)))
     case " ":
         print("Error!Please only enter one charecter(Ex:+,-,*,/,%,^)")
