@@ -17,16 +17,16 @@ except:
     
 match Operater:
     case "+":
-        print(round(num1 + num2))
+        print(round(num1 + num2,3))
     case "-":
-        print(round(num1 - num2))
+        print(round(num1 - num2,3))
     case "*":
-        print(round(num1 * num2))
+        print(round(num1 * num2,3))
     case "/":
-        print(round(num1 / num2))
+        print(round(num1 / num2,3))
     case "%":
-        print(round(num1 % num2))
+        print(round(num1 % num2,3))
     case "^":
-        print(round(pow(num1, num2)))
+        print(round(pow(num1, num2,3)))
     case " ":
         print("Error!Please only enter one charecter(Ex:+,-,*,/,%,^)")
