@@ -1,5 +1,4 @@
 import sys
-from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QLabel, QGridLayout 
 from PyQt5.QtGui import QFont
 
@@ -30,12 +29,12 @@ class mainWindow(QMainWindow):
         
         grid = QGridLayout()
         
-        grid.addWidget(self.text1,0,0,alignment=Qt.AlignCenter)
-        grid.addWidget(self.text2,0,1,alignment=Qt.AlignCenter)
-        grid.addWidget(self.text3,1,0,alignment=Qt.AlignCenter)
-        grid.addWidget(self.text4,1,1,alignment=Qt.AlignCenter)
-        grid.addWidget(self.text5,2,0,alignment=Qt.AlignCenter)
-        grid.addWidget(self.text6,2,1,alignment=Qt.AlignCenter)
+        grid.addWidget(self.text1,0,0)
+        grid.addWidget(self.text2,0,1)
+        grid.addWidget(self.text3,1,0)
+        grid.addWidget(self.text4,1,1)
+        grid.addWidget(self.text5,2,0)
+        grid.addWidget(self.text6,2,1)
         
         container.setLayout(grid)
         
