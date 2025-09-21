@@ -29,16 +29,18 @@ row1.addWidget(text3,alignment=Qt.AlignCenter)
 
 row2.addWidget(btn1,alignment=Qt.AlignCenter)
 
-num = ["1","2","3","4","5","6"]
+num1 = ["1","2","3","4","5","6"]
+num2 = ["2","3","4","1","6","5"]
+num3 = ["4","1","6","3","5","2"]
 
 def fnum():
-    x = choice(num)
+    x = choice(num1)
     text1.setText(x)
     
-    y = choice(num)
+    y = choice(num2)
     text2.setText(y)
 
-    z = choice(num)
+    z = choice(num3)
     text3.setText(z)
 
 btn1.clicked.connect(fnum)
