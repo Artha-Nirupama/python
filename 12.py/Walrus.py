@@ -1,0 +1,1 @@
+print("hello" if (x := int(input("Enter 1 or 2:"))) == 1 else "Bye!")
