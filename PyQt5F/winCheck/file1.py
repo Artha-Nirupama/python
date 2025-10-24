@@ -3,7 +3,26 @@ from PyQt5.QtCore import Qt
 import sys
 
 from file2 import MainWindowSec
+from Inside import MainWindowInside
+import mysql.connector
 
+class Database:
+    def __init__(self):
+        self.connection = mysql.connector.connect(
+            host='localhost',
+            user='root',
+            password='artha2025',
+            database='login',
+        )
+        self.cursors = self.connection.cursor()
+        
+    def commits(self):
+        self.connection.commit()
+        
+    def close(self):
+        self.cursors.close()
+        self.connection.close()
+    
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -72,6 +91,7 @@ class MainWindow(QMainWindow):
     
     def LayFuntionsCon(self):
         self.regBtn.clicked.connect(self.LayFuntions)
+        self.loginBtn.clicked.connect(self.loginFuntion)
         
     def css(self):
         self.setStyleSheet("""
@@ -96,7 +116,27 @@ class MainWindow(QMainWindow):
                                padding:5px;
                                width:100px;
                            }
-                           """) 
+                           """)
+    def loginFuntion(self):
+            username = self.unameIn.text()
+            password = self.passwordIn.text()
+            
+            db = Database()
+            curser = db.cursors
+            
+            query = "SELECT * FROM Login WHERE userName = %s AND password = %s " 
+            valuses = (username,password)
+            
+            curser.execute(query,valuses)
+            result = curser.fetchone()
+            
+            if result:
+                QMessageBox.information(self,"Login","Login successful!")
+                self.hide()
+                self.insides = MainWindowInside()
+                self.insides.show()
+            else:
+                QMessageBox.warning(self,"Error!","Login Fails!")      
         
 def main():
     app = QApplication(sys.argv)

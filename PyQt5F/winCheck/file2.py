@@ -229,7 +229,7 @@ class MainWindowSec(QMainWindow):
                                color:white;
                                padding:5px;
                                border-radius:8px;
-                               cuser:select;
+                               cursor:pointer;
                            }
                            QPushButton#DeleteC{
                                background-color:#ED452B;
