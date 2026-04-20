@@ -1,1 +1,1 @@
-this is a frist one that try to underst python. 
+this is a frist one that try to understand python. 
